@@ -1,0 +1,64 @@
+create table rss(URL varchar(1000),ts varchar(200),category varchar(200));
+create table land(URL varchar(1000),checksum varchar(500),category varchar(200), ds int DEFAULT 0, tries int DEFAULT 3, ps int DEFAULT 0);
+create unique index cs on land(checksum);
+
+RSS LINKS:
+NATION:
+insert into rss values('http://timesofindia.feedsportal.com/c/33039/f/533916/index.rss',CURRENT_TIMESTAMP,'Nation');
+insert into rss values('http://www.mid-day.com/Resources/midday/rss/news-national.xml',CURRENT_TIMESTAMP,'Nation');
+insert into rss values('http://indianexpress.com/section/india/feed/',CURRENT_TIMESTAMP,'Nation');
+insert into rss values('http://indiatoday.feedsportal.com/c/33614/f/589702/index.rss?http://indiatoday.intoday.in/rss/article.jsp?sid=36',CURRENT_TIMESTAMP,'Nation');
+
+WORLD:
+insert into rss values('http://timesofindia.feedsportal.com/c/33039/f/533917/index.rss',CURRENT_TIMESTAMP,'World');
+insert into rss values('http://www.mid-day.com/Resources/midday/rss/news-international.xml',CURRENT_TIMESTAMP,'World');
+insert into rss values('http://indianexpress.com/section/world/feed/',CURRENT_TIMESTAMP,'World');
+insert into rss values('http://indiatoday.feedsportal.com/c/33614/f/589705/index.rss?http://indiatoday.intoday.in/rss/article.jsp?sid=61',CURRENT_TIMESTAMP,'World');
+
+SPORTS:
+insert into rss values('http://timesofindia.feedsportal.com/c/33039/f/533921/index.rss',CURRENT_TIMESTAMP,'Sports');
+insert into rss values('http://indiatoday.feedsportal.com/c/33614/f/589706/index.rss?http://indiatoday.intoday.in/rss/article.jsp?sid=84',CURRENT_TIMESTAMP,'Sports');
+insert into rss values('http://www.mid-day.com/Resources/midday/rss/sports.xml',CURRENT_TIMESTAMP,'Sports');
+insert into rss values('',CURRENT_TIMESTAMP,'Sports');
+
+
+BUSINESS:
+insert into rss values('http://indiatoday.feedsportal.com/c/33614/f/589704/index.rss?http://indiatoday.intoday.in/rss/article.jsp?sid=34',CURRENT_TIMESTAMP,'Business');
+insert into rss values('http://timesofindia.feedsportal.com/c/33039/f/533919/index.rss',CURRENT_TIMESTAMP,'Business');
+insert into rss values('',CURRENT_TIMESTAMP,'Business');
+
+
+ENTERTAINMENT:
+insert into rss values('http://timesofindia.feedsportal.com/c/33039/f/533928/index.rss',CURRENT_TIMESTAMP,'Entertainment');
+insert into rss values('http://www.mid-day.com/Resources/midday/rss/entertainment-bollywood.xml',CURRENT_TIMESTAMP,'Entertainment');
+insert into rss values('http://indianexpress.com/section/entertainment/feed/#sthash.qlF1xkpb.dpuf',CURRENT_TIMESTAMP,'Entertainment');
+insert into rss values('',CURRENT_TIMESTAMP,'Entertainment');
+
+HEALTH:
+insert into rss values('http://timesofindia.feedsportal.com/c/33039/f/533968/index.rss',CURRENT_TIMESTAMP,'Health');
+insert into rss values('http://www.mid-day.com/Resources/midday/rss/life-and-style-health.xml',CURRENT_TIMESTAMP,'Health');
+insert into rss values('http://indianexpress.com/section/lifestyle/health/feed/',CURRENT_TIMESTAMP,'Health');
+insert into rss values('',CURRENT_TIMESTAMP,'Health');
+
+TECHNOLOGY:
+insert into rss values('http://timesofindia.feedsportal.com/c/33039/f/533923/index.rss',CURRENT_TIMESTAMP,'Technology');
+insert into rss values('http://www.mid-day.com/Resources/midday/rss/life-and-style-technology.xml',CURRENT_TIMESTAMP,'Technology');
+insert into rss values('http://indianexpress.com/section/technology/feed/',CURRENT_TIMESTAMP,'Technology');
+insert into rss values('',CURRENT_TIMESTAMP,'Technology');
+
+EDITORIAL:
+insert into rss values('http://www.mid-day.com/Resources/midday/rss/news-columnists.xml',CURRENT_TIMESTAMP,'Editorial');
+insert into rss values('http://timesofindia.feedsportal.com/c/33039/f/533927/index.rss',CURRENT_TIMESTAMP,'Editorial');
+insert into rss values('',CURRENT_TIMESTAMP,'Editorial');
+
+
+MONGODB:
+mongo
+use store
+db.webcrawler.find()
+db.webcrawler.count()
+db.webcrawler.drop()
+
+
+
+
